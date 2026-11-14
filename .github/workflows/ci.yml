@@ -23,3 +23,14 @@ jobs:
 
       - name: Build workspace
         run: cargo build --workspace --release
+
+      - name: Set up Node.js for the editor extension
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate and package the VS Code extension
+        working-directory: editors/vscode
+        run: |
+          node -e "for (const file of ['package.json', 'language-configuration.json', 'syntaxes/zak.tmLanguage.json', 'snippets/zak.json']) JSON.parse(require('node:fs').readFileSync(file, 'utf8'))"
+          npx --yes @vscode/vsce package --no-dependencies
