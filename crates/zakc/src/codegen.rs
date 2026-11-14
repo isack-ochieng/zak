@@ -166,7 +166,7 @@ impl FunctionGenerator {
                     Type::Int => {
                         self.used_printf = true;
                         self.body.push_str(&format!("  call i32 (ptr, ...) @printf(ptr {}, i64 {})\n",
-                            Self::global_pointer(".zak.fmt.int", 5), value.operand));
+                            Self::global_pointer(".zak.fmt.int", 6), value.operand));
                     }
                     Type::Bool => {
                         self.used_puts = true;
