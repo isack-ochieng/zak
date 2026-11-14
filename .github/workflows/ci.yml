@@ -1,0 +1,25 @@
+name: ZAK compiler CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  compiler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Clang
+        run: sudo apt-get update && sudo apt-get install -y clang
+
+      - name: Run compiler tests
+        run: cargo test --workspace
+
+      - name: Build workspace
+        run: cargo build --workspace --release
