@@ -1,0 +1,10 @@
+[package]
+name = "zakc"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "The ZAK language frontend and LLVM IR code generator"
+
+[lib]
+name = "zakc"
+path = "src/lib.rs"

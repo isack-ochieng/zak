@@ -1,0 +1,13 @@
+[package]
+name = "zak-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "The ZAK command-line tool"
+
+[[bin]]
+name = "zak"
+path = "src/main.rs"
+
+[dependencies]
+zakc = { path = "../zakc" }
