@@ -26,9 +26,6 @@
   "categories": [
     "Programming Languages"
   ],
-  "activationEvents": [
-    "onLanguage:zak"
-  ],
   "contributes": {
     "languages": [
       {
