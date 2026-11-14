@@ -87,6 +87,12 @@ The compiler writes generated files under build/, including main.ll.
 - [ZAK language specification 0.1](docs/spec-v0.1.md)
 - [Compiler architecture and implementation plan](docs/architecture/compiler-foundation.md)
 
+## VS Code support
+
+An initial declarative VS Code language extension lives in [editors/vscode](editors/vscode). It registers the `.zak` extension as language ID `zak`, provides ZAK 0.1 syntax highlighting, basic editing behaviour, snippets and a language icon.
+
+To test it in VS Code, open `editors/vscode` as a folder and press **F5** to launch an Extension Development Host. This editor extension does not install the compiler. The compiler is a separate `zak` CLI tool.
+
 ## Roadmap
 
 1. Stabilize the language frontend and type system.

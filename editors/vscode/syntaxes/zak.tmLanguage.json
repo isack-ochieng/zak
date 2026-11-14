@@ -1,0 +1,101 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ZAK",
+  "scopeName": "source.zak",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#function-declarations"
+    },
+    {
+      "include": "#function-calls"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.zak",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.zak",
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.zak"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.zak"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.zak",
+          "match": "\\\\\\\\."
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.zak",
+          "match": "\\\\b(fn|let|var|return)\\\\b"
+        },
+        {
+          "name": "constant.language.boolean.zak",
+          "match": "\\\\b(true|false)\\\\b"
+        }
+      ]
+    },
+    "types": {
+      "name": "storage.type.zak",
+      "match": "\\\\b(Int|Bool|String|Unit)\\\\b"
+    },
+    "function-declarations": {
+      "name": "entity.name.function.zak",
+      "match": "(?<=\\\\bfn\\\\s)[A-Za-z_][A-Za-z0-9_]*"
+    },
+    "function-calls": {
+      "name": "support.function.zak",
+      "match": "\\\\b(print)\\\\b(?=\\\\s*\\\\()"
+    },
+    "numbers": {
+      "name": "constant.numeric.integer.zak",
+      "match": "\\\\b[0-9]+\\\\b"
+    },
+    "operators": {
+      "name": "keyword.operator.zak",
+      "match": "==|!=|<=|>=|&&|\\\\|\\\\||[+*/%<>=!-]"
+    },
+    "punctuation": {
+      "name": "punctuation.zak",
+      "match": "[{}()\\\\[\\\\],;:.]"
+    }
+  }
+}

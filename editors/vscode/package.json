@@ -1,0 +1,64 @@
+{
+  "name": "zak-language-support",
+  "displayName": "ZAK Language Support",
+  "description": "Language support for ZAK: file recognition, syntax highlighting, snippets and editing basics.",
+  "version": "0.1.0",
+  "publisher": "isack-ochieng",
+  "license": "MIT",
+  "icon": "icons/zak-language.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isack-ochieng/zak.git"
+  },
+  "bugs": {
+    "url": "https://github.com/isack-ochieng/zak/issues"
+  },
+  "homepage": "https://github.com/isack-ochieng/zak",
+  "keywords": [
+    "zak",
+    "language",
+    "syntax highlighting",
+    "native development"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:zak"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "zak",
+        "aliases": [
+          "ZAK",
+          "zak"
+        ],
+        "extensions": [
+          ".zak"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/zak-language.png",
+          "dark": "./icons/zak-language.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "zak",
+        "scopeName": "source.zak",
+        "path": "./syntaxes/zak.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "zak",
+        "path": "./snippets/zak.json"
+      }
+    ]
+  }
+}

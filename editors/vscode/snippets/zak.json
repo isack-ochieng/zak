@@ -1,0 +1,33 @@
+{
+  "Main function": {
+    "prefix": "main",
+    "body": [
+      "fn main() -> Int {",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Create a ZAK program entry point"
+  },
+  "Print value": {
+    "prefix": "print",
+    "body": [
+      "print(${1:\"Hello from ZAK\"});"
+    ],
+    "description": "Print a value followed by a newline"
+  },
+  "Immutable variable": {
+    "prefix": "let",
+    "body": [
+      "let ${1:name}: ${2:Int} = ${3:value};"
+    ],
+    "description": "Declare an immutable local variable"
+  },
+  "Mutable variable": {
+    "prefix": "var",
+    "body": [
+      "var ${1:name}: ${2:Int} = ${3:value};"
+    ],
+    "description": "Declare a mutable local variable"
+  }
+}
